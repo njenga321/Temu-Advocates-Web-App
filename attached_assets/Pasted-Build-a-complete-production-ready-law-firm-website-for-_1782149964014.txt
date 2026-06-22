@@ -1,0 +1,408 @@
+Build a complete, production-ready law firm website for "Temu Advocates" 
+deployable to Vercel. Use React + Vite with TailwindCSS. No placeholder 
+content — every section should be fully written, designed, and functional.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BRAND KIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Colors (use as CSS custom properties):
+  --obsidian:   #111315  → primary backgrounds, nav
+  --slate-navy: #1F2937  → card backgrounds, section fills
+  --gold:       #D6B25E  → accents, CTAs, borders, highlights
+  --ivory:      #F7F7F5  → light section backgrounds, body text on dark
+  --steel:      #5B6470  → secondary text, captions, dividers
+
+Typography:
+  - Headings: "Cormorant Garamond" (Google Fonts) — elegant, editorial
+  - Body: "DM Sans" (Google Fonts) — clean, readable
+  - Labels/Caps: "DM Mono" — small uppercase labels only
+  - Import both from Google Fonts in index.html
+
+Voice Rules (apply to ALL written copy):
+  - Short sentences. No padding.
+  - No legal clichés ("trusted legal partner", "zealous advocacy", etc.)
+  - No exaggerated claims.
+  - Tone: strategic advisor, not a salesperson.
+  - Competence implied, never announced.
+  - Emphasize: clarity, judgment, discretion.
+
+Tagline (use throughout): "Clarity in complex matters."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TECH STACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- React + Vite
+- TailwindCSS (configured with custom brand tokens above)
+- React Router v6 (multi-page routing)
+- Framer Motion (scroll animations, page transitions)
+- React Hook Form (contact form)
+- Lucide React (icons only — no emoji)
+- Unsplash Source API for HD photos (use real, specific URLs):
+    Architecture/law library: https://images.unsplash.com/photo-1589829545856-d10d557cf95f
+    Courtroom: https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33
+    City skyline at night: https://images.unsplash.com/photo-1477959858617-67f85cf4f1df
+    Handshake/meeting: https://images.unsplash.com/photo-1556761175-5973dc0f32e7
+    Office interior: https://images.unsplash.com/photo-1497366216548-37526070297c
+    Scales of justice: https://images.unsplash.com/photo-1593115057322-e94b77572f20
+    Team discussion: https://images.unsplash.com/photo-1521791136064-7986c2920216
+    Contract signing: https://images.unsplash.com/photo-1450101499163-c8848c66ca85
+  Append ?w=1920&q=80&fit=crop to each URL for full resolution.
+
+- vercel.json config file must be included for SPA routing:
+  { "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SITE ARCHITECTURE — 6 PAGES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Routes:
+  /            → Home
+  /about       → About
+  /practice    → Practice Areas
+  /team        → Our Team
+  /insights    → Insights (blog index)
+  /contact     → Contact
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+GLOBAL COMPONENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+NAVBAR:
+  - Background: --obsidian, sticky, blur backdrop on scroll
+  - Logo: "TEMU ADVOCATES" in Cormorant Garamond, gold color, 
+    with a thin gold horizontal rule beneath
+  - Nav links: Home | About | Practice Areas | Team | Insights | Contact
+  - Active link: gold underline
+  - CTA button: "Schedule a Consultation" — gold border, transparent fill, 
+    ivory text, gold fill on hover
+  - Mobile: hamburger menu with full-screen dark overlay
+  - Smooth scroll behavior
+
+FOOTER:
+  - Background: --obsidian
+  - 3-column layout:
+      Col 1: Logo + tagline + brief description (2 sentences max)
+      Col 2: Quick Links (all 6 pages)
+      Col 3: Contact details + social icons (LinkedIn, X/Twitter)
+  - Bottom bar: "© 2025 Temu Advocates. All rights reserved." | 
+    "Privacy Policy" | "Terms of Use"
+  - Thin gold top border
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PAGE 1 — HOME (/)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HERO SECTION:
+  - Full viewport height
+  - Background: dark overlay (rgba 0,0,0,0.65) on the law library 
+    Unsplash photo, fixed parallax effect
+  - Layout: centered, text on left, right side 40% width gold-bordered 
+    decorative frame
+  - Headline (Cormorant Garamond, 72px): "Where judgment meets law."
+  - Subtext (DM Sans, 18px, ivory 80% opacity, max 2 lines): 
+    "Temu Advocates provides strategic legal counsel to businesses 
+    and individuals navigating complex matters."
+  - Two CTAs side by side:
+      Primary: "Our Practice Areas" — solid gold, obsidian text
+      Secondary: "Meet the Team" — outlined ivory
+  - Scroll indicator: animated chevron-down in gold
+
+STATS BAR:
+  - Background: --slate-navy
+  - 4 stats in a row, separated by thin gold vertical rules:
+      "15+ Years of Practice"
+      "200+ Matters Resolved"
+      "8 Practice Areas"
+      "3 Jurisdictions"
+  - Numbers in gold, labels in steel gray
+  - Animate numbers counting up on scroll entry
+
+PRACTICE PREVIEW:
+  - Section heading (DM Mono, uppercase, gold, small): "WHAT WE DO"
+  - Large heading: "Focused expertise. Precise counsel."
+  - 3-column card grid:
+      Each card: dark background (#1F2937), top gold border line (3px),
+      icon (Lucide), practice name, 2-sentence description, 
+      "Learn more →" link in gold
+  - Practice areas shown: Corporate Law | Dispute Resolution | 
+    Real Estate & Conveyancing
+  - CTA below grid: "View All Practice Areas →"
+
+WHY TEMU SECTION:
+  - Split layout: left = HD office interior photo in a clipped 
+    asymmetric frame, right = text content
+  - 3 value propositions with thin gold left-border:
+      "Judgment over precedent." — We assess each matter on its 
+      actual facts, not templates.
+      "Direct access to senior counsel." — You speak with the 
+      lawyer handling your matter.
+      "Discreet by default." — Confidentiality is a standard, 
+      not a feature.
+
+TESTIMONIALS:
+  - Background: --obsidian with subtle noise texture
+  - 3 testimonial cards in a carousel (auto-play, pause on hover)
+  - Each card: gold open-quote marks, testimonial text (italic, ivory), 
+    client name (gold), client title (steel gray)
+  - Write 3 realistic, non-hyperbolic testimonials consistent with voice rules
+
+CONTACT STRIP:
+  - Full-width dark section
+  - Headline: "A complex matter requires a clear head."
+  - Subtext: "Reach out. We'll tell you honestly whether we can help."
+  - Single CTA: "Schedule a Consultation" → /contact
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PAGE 2 — ABOUT (/about)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Page hero: dark background, heading "About the Firm", 
+  gold underline accent, breadcrumb navigation
+
+FIRM STORY:
+  - Two-column: large editorial photo (courtroom) on left, 
+    text on right
+  - Heading: "Built on clarity. Shaped by experience."
+  - 3 paragraphs of substantive firm history — founded to serve 
+    businesses and individuals who need legal counsel that is 
+    direct and precisely calibrated. No founding story clichés.
+
+VALUES SECTION:
+  - 3 cards with icon + title + 3-sentence description:
+      Precision — We think before we advise.
+      Discretion — What happens in your matter stays in your matter.
+      Accountability — We own our positions and our outcomes.
+
+TIMELINE:
+  - Vertical animated timeline (left gold line, dots in gold):
+      2009 — Firm founded in Nairobi
+      2012 — Expanded into commercial dispute resolution
+      2016 — Real estate practice formalized
+      2019 — Regional matters across East Africa
+      2023 — Corporate advisory practice launched
+      2025 — 15 years of practice
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PAGE 3 — PRACTICE AREAS (/practice)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Page hero with "Practice Areas" heading
+
+8 Practice Areas in a 2-column grid. Each card expands on click 
+(accordion or modal) to show full description:
+
+  1. Corporate Law & Advisory
+     Icon: Briefcase
+     Short: "Structuring, governance, and M&A support for growing businesses."
+     Long: Board advisory, shareholder agreements, entity structuring, 
+     M&A due diligence, regulatory compliance.
+
+  2. Dispute Resolution & Litigation
+     Icon: Scale
+     Short: "Representation in commercial disputes, arbitration, and court proceedings."
+     Long: High-value commercial litigation, arbitration, mediation, 
+     debt recovery, injunctive relief.
+
+  3. Real Estate & Conveyancing
+     Icon: Building
+     Short: "End-to-end legal support for property transactions."
+     Long: Title searches, sale agreements, lease drafting, 
+     land disputes, development advisory.
+
+  4. Employment & Labour
+     Icon: Users
+     Short: "Employer and employee representation on workplace matters."
+     Long: Employment contracts, redundancy, disciplinary processes, 
+     tribunal representation.
+
+  5. Banking & Finance
+     Icon: Landmark
+     Short: "Legal support for lending, security, and financial transactions."
+     Long: Loan documentation, security registration, 
+     facility agreements, regulatory matters.
+
+  6. Intellectual Property
+     Icon: Shield
+     Short: "Protection and enforcement of creative and commercial assets."
+     Long: Trademark registration, IP agreements, 
+     enforcement, licensing.
+
+  7. Family Law & Estates
+     Icon: Heart
+     Short: "Private matters handled with full discretion."
+     Long: Succession planning, wills, probate, 
+     matrimonial matters, guardianship.
+
+  8. Public Procurement & Regulatory
+     Icon: FileText
+     Short: "Navigating government contracting and regulatory frameworks."
+     Long: Tender advisory, procurement disputes, 
+     regulatory licensing, public law.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PAGE 4 — TEAM (/team)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Intro: "The people behind the work."
+- Subtext: "Senior counsel. No hand-offs to juniors without your knowledge."
+
+4 Team members in a 2x2 grid:
+
+  Each card:
+  - Photo (use Unsplash portrait photos — specify search: 
+    professional portrait lawyer, append ?w=600&q=80&fit=crop&face=1)
+  - Name in Cormorant Garamond
+  - Title in DM Mono gold uppercase
+  - 3-line bio (voice: understated, precise)
+  - Practice specializations as small gold tags
+  - LinkedIn icon link
+
+  Members:
+  1. Advocate Amara Temu — Managing Partner
+     Specializes in corporate law and M&A. 15 years in practice. 
+     Previously in-house counsel for a regional financial institution.
+
+  2. Advocate James Ochieng — Senior Associate
+     Dispute resolution and commercial litigation. 
+     Represented clients in matters before the Court of Appeal.
+
+  3. Advocate Wanjiru Mwangi — Associate
+     Real estate, conveyancing, and banking law. 
+     Known for clean, fast transaction closings.
+
+  4. Advocate Darius Mutua — Associate
+     Employment law and regulatory advisory. 
+     Background in labour relations and public procurement.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PAGE 5 — INSIGHTS (/insights)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Heading: "Insights"
+- Subtext: "Practical thinking on legal matters that affect your business."
+
+Blog index with 6 hardcoded articles (no CMS needed):
+
+  Display as a 3-column card grid with:
+  - Category tag (DM Mono, gold, uppercase)
+  - Headline
+  - 2-sentence excerpt
+  - Author name + date
+  - "Read →" link in gold
+  - Thumbnail image from Unsplash
+
+  Article topics:
+  1. "What founders get wrong about shareholder agreements"
+     Category: CORPORATE LAW
+  2. "Why your employment contract is probably unenforceable"
+     Category: EMPLOYMENT
+  3. "The conveyancing process in Kenya: what to expect"
+     Category: REAL ESTATE
+  4. "Arbitration vs. litigation: choosing the right forum"
+     Category: DISPUTE RESOLUTION
+  5. "Protecting your brand before it grows"
+     Category: IP
+  6. "How public procurement disputes are handled in Kenya"
+     Category: REGULATORY
+
+  Each article links to /insights/[slug] — build 
+  a dynamic route that renders a full article page with:
+  - Large hero image
+  - Article title and metadata
+  - Full article body (write 400–500 words per article, 
+    consistent with voice rules)
+  - "Back to Insights" link
+  - Related articles section (2 cards)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PAGE 6 — CONTACT (/contact)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Heading: "Let's talk."
+- Subtext: "Tell us about your matter. We'll respond within 24 hours."
+
+Split layout:
+  LEFT — Contact Form (React Hook Form):
+    Fields:
+      Full Name (required)
+      Email (required, validated)
+      Phone Number
+      Matter Type (select: Corporate | Dispute | Real Estate | 
+        Employment | Banking | IP | Family | Regulatory | Other)
+      Brief Description (textarea, max 500 chars with live counter)
+    Submit button: gold, full width, "Send Message"
+    Success state: replace form with confirmation message in gold
+    Error state: inline field validation messages
+
+  RIGHT — Contact Details:
+    Office address: "Temu Advocates, 14th Floor, Delta House, 
+      Chiromo Road, Nairobi, Kenya"
+    Phone: "+254 700 000 000"
+    Email: "counsel@temuadvocates.co.ke"
+    Hours: "Monday – Friday: 8:00 AM – 6:00 PM"
+    Embedded Google Maps iframe (Chiromo Road, Nairobi area)
+    Social links: LinkedIn, X/Twitter
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ANIMATIONS & POLISH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Framer Motion: fade-up on all section entries (staggered children)
+- Page transitions: fade between routes
+- Hover states on all interactive elements (subtle gold glow, 
+  scale 1.02)
+- Active nav link: gold underline with animated width expansion
+- Smooth scroll globally
+- Custom scrollbar: thin, gold thumb on dark track
+- Loading screen: "TEMU ADVOCATES" text in gold on obsidian, 
+  fades out after 1.2s
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PERFORMANCE & SEO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- All images: lazy loading with loading="lazy"
+- Meta tags per page (title, description, og:image)
+- Semantic HTML throughout (main, section, article, nav, footer)
+- No console errors on build
+- vercel.json included for SPA routing
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FILE STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+src/
+  components/
+    Navbar.jsx
+    Footer.jsx
+    HeroSection.jsx
+    PracticeCard.jsx
+    TestimonialCarousel.jsx
+    TeamCard.jsx
+    InsightCard.jsx
+    ContactForm.jsx
+    AnimatedSection.jsx (reusable Framer Motion wrapper)
+  pages/
+    Home.jsx
+    About.jsx
+    Practice.jsx
+    Team.jsx
+    Insights.jsx
+    InsightArticle.jsx
+    Contact.jsx
+  data/
+    practiceAreas.js
+    teamData.js
+    insightsData.js   ← includes full article body copy
+  styles/
+    index.css         ← Tailwind + custom CSS properties
+  App.jsx             ← Router setup
+  main.jsx
+vercel.json
+index.html            ← Google Fonts import
+tailwind.config.js    ← brand colors as custom tokens
+
+Build this completely. Do not use lorem ipsum. 
+Write all copy in voice. Deploy-ready on first build.
