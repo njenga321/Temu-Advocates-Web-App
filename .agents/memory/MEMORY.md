@@ -1,0 +1,2 @@
+- [Temu Advocates asset imports](temu-assets.md) — @assets alias blocked by fs.strict; use src/assets/ copies with relative imports instead.
+- [Temu Advocates theme system](temu-theme.md) — ThemeContext + CSS vars (--bg, --surface, --text, --text-muted etc.) toggled via html.dark class; default is dark.
