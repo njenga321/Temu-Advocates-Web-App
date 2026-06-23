@@ -52,7 +52,7 @@ export default function Contact() {
       <section
         className="pt-36 pb-20 relative"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1920&q=80&fit=crop')",
+          backgroundImage: "url('/contact-hero.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

@@ -70,8 +70,8 @@ export default function About() {
             <AnimatedSection direction="left">
               <div className="relative h-80 md:h-96 lg:h-[540px] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?w=1920&q=80&fit=crop"
-                  alt="Legal documents"
+                  src="/about-story.jpg"
+                  alt="Scales of justice and gavel"
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />

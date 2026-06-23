@@ -136,7 +136,7 @@ export default function InsightArticle() {
                     <span className="text-xs font-mono uppercase tracking-widest block mb-2" style={{ color: "var(--gold)" }}>
                       {rel.category}
                     </span>
-                    <h3 className="font-serif text-lg leading-snug group-hover:text-gold transition-colors duration-200" style={{ color: "var(--ivory)", fontWeight: 400 }}>
+                    <h3 className="font-serif text-lg leading-snug group-hover:text-gold transition-colors duration-200" style={{ color: "var(--text)", fontWeight: 400 }}>
                       {rel.title}
                     </h3>
                   </div>
