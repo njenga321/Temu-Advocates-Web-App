@@ -5,27 +5,22 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { mockupPreviewPlugin } from "./mockupPreviewPlugin";
 
+// Handle PORT elegantly: check environment, default to 5173 for Vercel/local builds
 const rawPort = process.env.PORT;
+let port = 5173;
 
-if (!rawPort) {
-  throw new Error(
-    "PORT environment variable is required but was not provided.",
-  );
+if (rawPort) {
+  const parsedPort = Number(rawPort);
+  if (!Number.isNaN(parsedPort) && parsedPort > 0) {
+    port = parsedPort;
+  } else if (process.env.NODE_ENV !== "production") {
+    // Only throw errors for invalid configurations during local development
+    throw new Error(`Invalid PORT value: "${rawPort}"`);
+  }
 }
 
-const port = Number(rawPort);
-
-if (Number.isNaN(port) || port <= 0) {
-  throw new Error(`Invalid PORT value: "${rawPort}"`);
-}
-
-const basePath = process.env.BASE_PATH;
-
-if (!basePath) {
-  throw new Error(
-    "BASE_PATH environment variable is required but was not provided.",
-  );
-}
+// Handle BASE_PATH gracefully: Default to "/" for root deployments like Vercel
+const basePath = process.env.BASE_PATH || "/";
 
 export default defineConfig({
   base: basePath,
