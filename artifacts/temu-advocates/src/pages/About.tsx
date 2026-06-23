@@ -107,7 +107,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <AnimatedSection className="mb-16">
             <p className="text-xs font-mono uppercase tracking-widest mb-4" style={{ color: "var(--gold)" }}>What We Stand For</p>
-            <h2 className="font-serif text-4xl" style={{ color: "var(--ivory)", fontWeight: 400 }}>Our values.</h2>
+            <h2 className="font-serif text-4xl" style={{ color: "var(--text)", fontWeight: 400 }}>Our values.</h2>
           </AnimatedSection>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.12}>
@@ -169,10 +169,10 @@ export default function About() {
       <section className="py-20" style={{ backgroundColor: "var(--obsidian)", borderTop: "1px solid rgba(214,178,94,0.1)" }}>
         <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <h2 className="font-serif text-3xl md:text-4xl mb-6" style={{ color: "var(--ivory)", fontWeight: 400 }}>
+            <h2 className="font-serif text-3xl md:text-4xl mb-6" style={{ color: "var(--text)", fontWeight: 400 }}>
               Let us know what you're dealing with.
             </h2>
-            <p className="text-sm mb-8" style={{ color: "var(--steel)" }}>
+            <p className="text-sm mb-8" style={{ color: "var(--text-muted)" }}>
               We'll tell you honestly whether it's something we can help with.
             </p>
             <Link href="/contact">

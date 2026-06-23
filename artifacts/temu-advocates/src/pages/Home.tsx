@@ -190,7 +190,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <AnimatedSection className="mb-16">
             <p className="text-xs font-mono uppercase tracking-widest mb-4" style={{ color: "var(--gold)" }}>What We Do</p>
-            <h2 className="font-serif text-4xl md:text-5xl" style={{ color: "var(--ivory)", fontWeight: 400 }}>
+            <h2 className="font-serif text-4xl md:text-5xl" style={{ color: "var(--text)", fontWeight: 400 }}>
               Focused expertise.
               <br />
               <em style={{ color: "var(--gold)" }}>Precise counsel.</em>
@@ -281,7 +281,7 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <p className="text-xs font-mono uppercase tracking-widest mb-4" style={{ color: "var(--gold)" }}>Client Perspective</p>
-            <h2 className="font-serif text-4xl" style={{ color: "var(--ivory)", fontWeight: 400 }}>What clients say.</h2>
+            <h2 className="font-serif text-4xl" style={{ color: "var(--text)", fontWeight: 400 }}>What clients say.</h2>
           </AnimatedSection>
 
           <div className="relative min-h-56">

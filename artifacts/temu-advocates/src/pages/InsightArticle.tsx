@@ -83,7 +83,7 @@ export default function InsightArticle() {
               <p
                 key={i}
                 className="text-base leading-relaxed"
-                style={{ color: para.startsWith('"') ? "var(--ivory)" : "var(--steel)" }}
+                style={{ color: para.startsWith('"') ? "var(--text)" : "var(--text-muted)" }}
               >
                 {para}
               </p>

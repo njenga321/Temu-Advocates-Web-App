@@ -210,10 +210,10 @@ export default function Contact() {
                   <p className="text-xs font-mono uppercase tracking-widest mb-6" style={{ color: "var(--gold)" }}>Our Office</p>
                   <div className="space-y-5">
                     {[
-                      { Icon: MapPin, content: <><p className="text-sm leading-relaxed" style={{ color: "var(--ivory)" }}>14th Floor, Delta House<br />Chiromo Road, Nairobi, Kenya</p></> },
-                      { Icon: Phone, content: <a href="tel:+254700000000" className="text-sm" style={{ color: "var(--ivory)" }}>+254 700 000 000</a> },
-                      { Icon: Mail, content: <a href="mailto:counsel@temuadvocates.co.ke" className="text-sm break-all" style={{ color: "var(--ivory)" }}>counsel@temuadvocates.co.ke</a> },
-                      { Icon: Clock, content: <p className="text-sm" style={{ color: "var(--ivory)" }}>Monday – Friday: 8:00 AM – 6:00 PM</p> },
+                      { Icon: MapPin, content: <><p className="text-sm leading-relaxed" style={{ color: "var(--text)" }}>14th Floor, Delta House<br />Chiromo Road, Nairobi, Kenya</p></> },
+                      { Icon: Phone, content: <a href="tel:+254700000000" className="text-sm" style={{ color: "var(--text)" }}>+254 700 000 000</a> },
+                      { Icon: Mail, content: <a href="mailto:counsel@temuadvocates.co.ke" className="text-sm break-all" style={{ color: "var(--text)" }}>counsel@temuadvocates.co.ke</a> },
+                      { Icon: Clock, content: <p className="text-sm" style={{ color: "var(--text)" }}>Monday – Friday: 8:00 AM – 6:00 PM</p> },
                     ].map(({ Icon, content }, i) => (
                       <div key={i} className="flex gap-4">
                         <Icon size={18} className="flex-shrink-0 mt-0.5" style={{ color: "var(--gold)" }} />

@@ -17,9 +17,8 @@
   --radius: 0.25rem;
 }
 
-/* ─── FIXED PALETTE VARS (never change with theme) ─────────────── */
+/* ─── FIXED PALETTE VARS (always dark — never flip with theme) ─── */
 :root {
-  --obsidian: #111315;
   --slate-navy: #1F2937;
   --deep-navy: #0f1e36;
   --ivory: #F7F7F5;
@@ -32,6 +31,7 @@
 /* ─── SEMANTIC THEME VARIABLES ─────────────────────────────────── */
 :root {
   /* Light mode */
+  --obsidian: #F7F7F5;          /* near-black pages → go light */
   --bg: #F7F7F5;
   --surface: #FFFFFF;
   --surface-alt: #f0f0ee;
@@ -49,6 +49,7 @@
 
 html.dark {
   /* Dark mode */
+  --obsidian: #111315;          /* near-black pages → stay dark */
   --bg: #111315;
   --surface: #1F2937;
   --surface-alt: #161a1e;
